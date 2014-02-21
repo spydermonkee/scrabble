@@ -25,3 +25,18 @@ describe('letterScorer', function() {
   });
 });
 
+describe('wordScorer', function(){
+  it('returns the total value of a given word', function(){
+    wordScorer('A').should.equal(1);
+  });
+  it('returns the total value of a given word', function(){
+    wordScorer('AT').should.equal(2);
+  });
+  it('returns the total value of a given word, regardless of letter case', function(){
+    wordScorer('quEst').should.equal(14);
+  });
+  it('alerts the user if the input contains anything besides letters', function(){
+    wordScorer("don't").should.equal('not a valid scrabble word');
+  });
+});
+
